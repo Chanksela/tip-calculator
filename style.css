@@ -22,9 +22,24 @@ body {
   width: 60px;
 }
 .container {
+  display: flex;
   background-color: var(--white);
+  justify-content: space-around;
+  align-items: center;
   margin: 20px 0;
   width: 70%;
-  height: 40%;
+  height: 60%;
   border-radius: 20px;
+}
+.input {
+  background-color: var(--lightBlue);
+  border-radius: 20px;
+  width: 45%;
+  height: 90%;
+}
+.output {
+  background-color: var(--darkBlue);
+  border-radius: 20px;
+  width: 45%;
+  height: 90%;
 }
