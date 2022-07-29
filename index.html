@@ -13,7 +13,33 @@
     <div id="header"></div>
     <img src="/assets/logo.svg" alt="logo.svg" id="header-img" />
     <div class="container">
-      <div class="input"></div>
+      <div class="input">
+        <div class="input-choices">
+          <div class="bill">
+            <label for="bill">Bill</label>
+            <input type="number" name="bill" id="bill" />
+          </div>
+          <div class="select-tip">
+            <label for="tip">Select Tip %</label>
+            <div class="choices">
+              <button>%</button>
+              <button>%</button>
+              <button>%</button>
+              <button>%</button>
+              <button>%</button>
+              <input type="number" name="tip" id="tip" />
+            </div>
+          </div>
+          <div class="number-of-people">
+            <label for="number-of-people">Number of People</label>
+            <input
+              type="number"
+              name="number-of-people"
+              id="number-of-people"
+            />
+          </div>
+        </div>
+      </div>
       <div class="output"></div>
     </div>
   </body>
