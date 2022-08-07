@@ -22,11 +22,11 @@
           <div class="select-tip">
             <label for="tip">Select Tip %</label>
             <div class="choices">
-              <button>5%</button>
-              <button>10%</button>
-              <button>15%</button>
-              <button>25%</button>
-              <button>50%</button>
+              <button class="percentage-btn" value="5">5%</button>
+              <button class="percentage-btn" value="10">10%</button>
+              <button class="percentage-btn" value="15">15%</button>
+              <button class="percentage-btn" value="25">25%</button>
+              <button class="percentage-btn" value="50">50%</button>
               <input type="number" name="tip" id="tip" placeholder="CUSTOM" />
             </div>
           </div>
@@ -41,7 +41,9 @@
           </div>
         </div>
       </div>
-      <div class="output"></div>
+      <div class="output">
+        <div id="result"></div>
+      </div>
     </div>
   </body>
 </html>
