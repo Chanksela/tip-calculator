@@ -1,4 +1,5 @@
-const resultElement = document.getElementById("result");
+const resultDisplayElement = document.getElementById("display-input");
+const tipEachPersonElement = document.getElementById("display-tip");
 const userInputElement = document.getElementById("bill");
 const percentageButtonElement =
   document.getElementsByClassName("percentage-btn");
@@ -7,14 +8,22 @@ let userInputValue;
 let buttonValue;
 function billAmount() {
   userInputValue = userInputElement.value;
-  result.innerHTML = userInputValue;
+  resultDisplayElement.innerHTML = userInputValue;
 }
+// function calculateTip() {
+//     tipEachPersonElement.innerText =
+//       userInputValue * percentageButtonElement[i].value) / 100;
+//   }
+function handleBtnClick(percantageValue, percantageButton, index) {
+  percantageValue.innerText =
+    (userInputValue * percantageButton[index].value) / 100;
+}
+
 console.log(userInputValue);
-// function getButtonValue() {s}
 for (let i = 0; i < percentageButtonElement.length; i++) {
-  console.log(percentageButtonElement[i].value);
-  percentageButtonElement[i].addEventListener("click", () => {
-    console.log((userInputValue * percentageButtonElement[i].value) / 100);
-  });
+  function calculateTip() {
+    handleBtnClick(tipEachPersonElement, percentageButtonElement, i);
+  }
+  percentageButtonElement[i].addEventListener("click", calculateTip);
 }
 userInputElement.addEventListener("change", billAmount);
