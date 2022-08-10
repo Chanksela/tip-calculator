@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="header"></div>
-    <img src="/assets/logo.svg" alt="logo.svg" id="header-img" />
+    <div id="header">
+      <img src="/assets/logo.svg" alt="logo.svg" id="header-img" />
+    </div>
     <div class="container">
       <div class="input">
         <div class="input-choices">
           <div class="bill">
             <label for="bill">Bill</label>
             <input type="number" name="bill" id="bill" placeholder="0" />
+            <div id="bill-error"></div>
           </div>
           <div class="select-tip">
             <label for="tip">Select Tip %</label>
@@ -30,7 +32,7 @@
               <input
                 type="number"
                 name="tip"
-                id="input-percentage-btn"
+                id="percentage-input"
                 placeholder="CUSTOM"
               />
             </div>
@@ -40,15 +42,29 @@
             <input
               type="number"
               name="number-of-people"
-              id="number-of-people"
+              id="number-of-people-input"
               placeholder="0"
             />
           </div>
         </div>
       </div>
       <div class="output">
-        <div id="display-input"></div>
-        <div id="display-tip"></div>
+        <div>
+          <div>Bill is</div>
+          <div id="display-input"></div>
+        </div>
+        <div>
+          <div>Tip is</div>
+          <div id="display-tip"></div>
+        </div>
+        <div>
+          <div>Tip is</div>
+          <div id="percentage"></div>
+        </div>
+        <div>
+          <div>People is</div>
+          <div id="display-people"></div>
+        </div>
       </div>
     </div>
   </body>
