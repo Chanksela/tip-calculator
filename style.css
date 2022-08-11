@@ -121,7 +121,16 @@ body {
 /* output box */
 .output {
   background-color: var(--darkBlue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
   border-radius: 20px;
   width: 45%;
   height: 90%;
+}
+.display-blocks {
+  margin: 0 20px;
+  display: flex;
+  gap: 5px;
 }
