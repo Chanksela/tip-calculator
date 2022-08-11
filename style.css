@@ -46,6 +46,11 @@ body {
   height: 100vh;
   width: 100vw;
 }
+.error {
+  color: red;
+  font-size: 0.5rem;
+  text-align: right;
+}
 /* Header & Container */
 #header-img {
   width: 60px;

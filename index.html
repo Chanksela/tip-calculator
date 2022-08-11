@@ -19,23 +19,24 @@
           <div class="bill">
             <label for="bill">Bill</label>
             <input type="number" name="bill" id="bill" placeholder="0" />
-            <div id="bill-error"></div>
+            <div class="error" id="bill-error"></div>
           </div>
           <div class="select-tip">
             <label for="tip">Select Tip %</label>
             <div class="choices">
-              <button class="percentage-btn" value="5">5%</button>
-              <button class="percentage-btn" value="10">10%</button>
-              <button class="percentage-btn" value="15">15%</button>
-              <button class="percentage-btn" value="25">25%</button>
-              <button class="percentage-btn" value="50">50%</button>
+              <button class="tip-btn" value="5">5%</button>
+              <button class="tip-btn" value="10">10%</button>
+              <button class="tip-btn" value="15">15%</button>
+              <button class="tip-btn" value="25">25%</button>
+              <button class="tip-btn" value="50">50%</button>
               <input
                 type="number"
                 name="tip"
-                id="percentage-input"
+                id="tip-input"
                 placeholder="CUSTOM"
               />
             </div>
+            <div class="error" id="tip-error"></div>
           </div>
           <div class="number-of-people">
             <label for="number-of-people">Number of People</label>
@@ -45,7 +46,7 @@
               id="number-of-people-input"
               placeholder="0"
             />
-            <div id="num-ppl-error"></div>
+            <div class="error" id="num-ppl-error"></div>
           </div>
         </div>
       </div>
