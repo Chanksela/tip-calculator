@@ -67,12 +67,16 @@
       </div>
       <div class="container-blocks right">
         <div class="display-blocks">
-          <div>Tip Amount</div>
-          <div id="full-amount"></div>
+          <div class="tip-header">
+            Tip Amount<span class="span-person">/person</span>
+          </div>
+          <div id="tip-for-each" class="display-amount">$0.00</div>
         </div>
         <div class="display-blocks">
-          <div>Tip For Each</div>
-          <div id="tip-for-each"></div>
+          <div class="tip-header">
+            Total <span class="span-person">/person</span>
+          </div>
+          <div id="full-amount" class="display-amount">$0.00</div>
         </div>
         <div class="reset-button">
           <button type="button" id="reset">RESET</button>

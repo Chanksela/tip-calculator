@@ -32,15 +32,15 @@ function calculate(e) {
   getValue(e);
   if (bill > 0) {
     tipTotalAmount = bill;
-    displayFullTip.innerHTML = tipTotalAmount;
+    displayFullTip.innerHTML = "$" + tipTotalAmount.toFixed(2);
   }
   if (bill > 0 && tip > 0) {
     tipTotalAmount = bill + (bill * tip) / 100;
-    displayFullTip.innerHTML = tipTotalAmount;
+    displayFullTip.innerHTML = "$" + tipTotalAmount.toFixed(2);
   }
   if (bill > 0 && tip > 0 && people > 0) {
     tipForEachPerson = tipTotalAmount / people;
-    displayTipForEach.innerHTML = tipForEachPerson;
+    displayTipForEach.innerHTML = "$" + tipForEachPerson.toFixed(2);
   }
 }
 function reset() {

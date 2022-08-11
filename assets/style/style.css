@@ -120,6 +120,7 @@ input {
   color: var(--white);
   border: none;
   border-radius: 4px;
+  transition: 0.3s ease-in;
 }
 .tip-btn:hover {
   cursor: pointer;
@@ -143,12 +144,51 @@ input {
 .right {
   background-color: var(--darkCyan);
 }
+.display-blocks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.tip-header {
+  font-size: 1.4vw;
+  position: absolute;
+  left: 10%;
+  display: flex;
+  color: var(--white);
+  flex-direction: column;
+}
+.span-person {
+  color: var(--darkGrayCyan);
+  font-size: 1vw;
+}
+.display-amount {
+  color: var(--primary);
+  font-size: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  left: 45%;
+  right: 5%;
+}
 .reset-button {
   display: flex;
   justify-content: center;
   height: auto;
 }
+
 .reset-button > button {
+  color: var(--darkCyan);
   width: 80%;
   height: 150%;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.reset-button > button:hover {
+  background-color: var(--veryLightGrayishCyan);
+  filter: brightness(90%);
 }
