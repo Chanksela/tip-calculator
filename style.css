@@ -47,14 +47,16 @@ body {
   width: 100vw;
 }
 label {
-  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 .error {
-  color: red;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
+  font-weight: 600;
   text-align: right;
-  border: 1px solid;
+  color: red;
 }
 /* Header & Container */
 #header-img {

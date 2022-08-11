@@ -21,23 +21,35 @@ const tipButtonElement = document.getElementsByClassName("tip-btn");
 const numberOfPeopleInputElement = document.getElementById(
   "number-of-people-input"
 );
-
+function errorHandling(value, element, errorElement, errorMessage) {
+  if (value > 0) {
+    errorElement.innerHTML = "";
+    element.innerHTML = value;
+  } else {
+    errorElement.innerHTML = errorMessage;
+  }
+}
 function getValue(event) {
   let targetID = event.target.id;
   let targetClass = event.target.classList.value;
   if (targetID === "bill") {
     bill = parseFloat(event.target.value);
-    displayBillElement.innerHTML = bill;
+    errorHandling(bill, displayBillElement, displayBillError, errorMessage);
   } else if (targetID === "tip-input") {
     tip = parseFloat(event.target.value);
-    displayTipElement.innerHTML = tip;
+    errorHandling(tip, displayTipElement, displayTipError, errorMessage);
   } else if (targetID === "number-of-people-input") {
     people = parseFloat(event.target.value);
-    displayPeopleElement.innerHTML = people;
+    errorHandling(
+      people,
+      displayPeopleElement,
+      displayPeopleError,
+      errorMessage
+    );
   } else if (targetClass === "tip-btn") {
+    tipInputElement.value = "";
     tip = parseFloat(event.target.value);
-    displayTipElement.innerHTML = tip;
-    console.log("You Clicked a button: ", event.target.value);
+    errorHandling(tip, displayTipElement, displayTipError, errorMessage);
   }
 }
 function calculate(e) {
