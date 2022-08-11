@@ -23,14 +23,14 @@ input {
   font-weight: bold;
   font-size: 20px;
 }
-button {
+.tip-btn {
   border: none;
   background-color: var(--darkBlue);
   border-radius: 5px;
   color: var(--white);
   font-weight: bold;
 }
-button:hover {
+.tip-btn:hover {
   transition: 0.5s ease;
   background-color: var(--lightBlue);
   color: var(--darkBlue);

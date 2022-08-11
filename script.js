@@ -21,18 +21,23 @@ const tipButtonElement = document.getElementsByClassName("tip-btn");
 const numberOfPeopleInputElement = document.getElementById(
   "number-of-people-input"
 );
+
 function getValue(event) {
-  let target = event.target.id;
-  console.log(target);
-  if (target === "bill") {
+  let targetID = event.target.id;
+  let targetClass = event.target.classList.value;
+  if (targetID === "bill") {
     bill = parseFloat(event.target.value);
     displayBillElement.innerHTML = bill;
-  } else if (target === "tip-input") {
+  } else if (targetID === "tip-input") {
     tip = parseFloat(event.target.value);
     displayTipElement.innerHTML = tip;
-  } else if (target === "number-of-people-input") {
+  } else if (targetID === "number-of-people-input") {
     people = parseFloat(event.target.value);
     displayPeopleElement.innerHTML = people;
+  } else if (targetClass === "tip-btn") {
+    tip = parseFloat(event.target.value);
+    displayTipElement.innerHTML = tip;
+    console.log("You Clicked a button: ", event.target.value);
   }
 }
 function calculate(e) {
@@ -45,8 +50,10 @@ function calculate(e) {
     tipForEachPerson = tipTotalAmount / people;
     displayTipForEach.innerHTML = tipForEachPerson;
   }
-  displayFullTip.innerHTML = parseFloat(tipAmount);
 }
 billInputElement.addEventListener("input", (e) => calculate(e));
 tipInputElement.addEventListener("input", (e) => calculate(e));
 numberOfPeopleInputElement.addEventListener("input", (e) => calculate(e));
+for (let i = 0; i < tipButtonElement.length; i++) {
+  tipButtonElement[i].addEventListener("click", (e) => calculate(e));
+}
