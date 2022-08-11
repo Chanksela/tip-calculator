@@ -15,33 +15,18 @@ const tipButtonElement = document.getElementsByClassName("tip-btn");
 const numberOfPeopleInputElement = document.getElementById(
   "number-of-people-input"
 );
-// variables
-let billInputValue;
-let tipValue;
-let numOfPeopleValue;
 
 function handleInput(e) {
   const input = e.target.id;
   switch (input) {
     case "bill":
-      getInputValue(
-        billInputValue,
-        billInputElement,
-        displayBillElement,
-        displayBillError
-      );
+      getInputValue(billInputElement, displayBillElement, displayBillError);
       break;
     case "tip-input":
-      getInputValue(
-        tipValue,
-        tipInputElement,
-        displayTipElement,
-        displayTipError
-      );
+      getInputValue(tipInputElement, displayTipElement, displayTipError);
       break;
     case "number-of-people-input":
       getInputValue(
-        numOfPeopleValue,
         numberOfPeopleInputElement,
         displayPeopleElement,
         displayPeopleError
@@ -49,16 +34,11 @@ function handleInput(e) {
       break;
   }
 }
-function getInputValue(
-  valueVariable,
-  inputElement,
-  displayElement,
-  errorElement
-) {
-  valueVariable = inputElement.value;
+function getInputValue(inputElement, displayElement, errorElement) {
+  console.log("id: ", inputElement.id);
   if (inputElement.value > 0) {
     errorElement.innerHTML = "";
-    displayElement.innerHTML = valueVariable;
+    displayElement.innerHTML = inputElement.value;
   } else {
     errorElement.innerHTML = errorMessage;
   }
@@ -66,11 +46,33 @@ function getInputValue(
 }
 
 function calculateTest() {
+  if (
+    billInputElement.value > 0 &&
+    tipInputElement.value > 0 &&
+    numberOfPeopleInputElement.value > 0
+  ) {
+    displayResult.innerHTML =
+      (billInputElement.value * tipInputElement.value) /
+      100 /
+      numberOfPeopleInputElement.value;
+  }
   console.log("bill: ", billInputElement.value);
-  console.log("tip", tipInputElement.value);
-  console.log("people", numberOfPeopleInputElement.value, numOfPeopleValue);
+  console.log("tip input", tipInputElement.value);
+  console.log("people", numberOfPeopleInputElement.value);
 }
 
 billInputElement.addEventListener("change", handleInput);
 tipInputElement.addEventListener("change", handleInput);
+for (let i = 0; i < tipButtonElement.length; i++) {
+  tipButtonElement[i].addEventListener("click", () => {
+    displayTipElement.innerHTML = tipButtonElement[i].value;
+    if (billInputElement.value > 0 && numberOfPeopleInputElement.value > 0) {
+      displayResult.innerHTML =
+        (billInputElement.value * displayTipElement.innerHTML) /
+        100 /
+        numberOfPeopleInputElement.value;
+    }
+  });
+  console.log(tipButtonElement[i].tagName);
+}
 numberOfPeopleInputElement.addEventListener("change", handleInput);
