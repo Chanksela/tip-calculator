@@ -121,6 +121,7 @@ input {
   border: none;
   border-radius: 4px;
   transition: 0.3s ease-in;
+  transition-property: background-color;
 }
 .tip-btn:hover {
   cursor: pointer;
@@ -187,6 +188,7 @@ input {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  transition-property: background-color;
 }
 .reset-button > button:hover {
   background-color: var(--veryLightGrayishCyan);
