@@ -17,12 +17,16 @@
       <div class="input">
         <div class="input-choices">
           <div class="bill">
-            <label for="bill">Bill</label>
+            <label for="bill"
+              >Bill <span class="error" id="bill-error"> </span
+            ></label>
+
             <input type="number" name="bill" id="bill" placeholder="0" />
-            <div class="error" id="bill-error"></div>
           </div>
           <div class="select-tip">
-            <label for="tip">Select Tip %</label>
+            <label for="tip"
+              >Select Tip %<span class="error" id="tip-error"></span
+            ></label>
             <div class="choices">
               <button class="tip-btn" value="5">5%</button>
               <button class="tip-btn" value="10">10%</button>
@@ -36,17 +40,17 @@
                 placeholder="CUSTOM"
               />
             </div>
-            <div class="error" id="tip-error"></div>
           </div>
           <div class="number-of-people">
-            <label for="number-of-people">Number of People</label>
+            <label for="number-of-people"
+              >Number of People <span class="error" id="num-ppl-error"></span
+            ></label>
             <input
               type="number"
               name="number-of-people"
               id="number-of-people-input"
               placeholder="0"
             />
-            <div class="error" id="num-ppl-error"></div>
           </div>
         </div>
       </div>
@@ -64,7 +68,11 @@
           <div id="display-people"></div>
         </div>
         <div class="display-blocks">
-          <div>Result is</div>
+          <div>Tip Amount</div>
+          <div id="full-tip"></div>
+        </div>
+        <div class="display-blocks">
+          <div>Tip Amount for Each person</div>
           <div id="result"></div>
         </div>
       </div>

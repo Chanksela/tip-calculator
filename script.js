@@ -3,6 +3,7 @@ const errorMessage = "Must be greater than 0";
 const displayBillElement = document.getElementById("display-input");
 const displayPeopleElement = document.getElementById("display-people");
 const displayTipElement = document.getElementById("display-tip");
+const displayFullTip = document.getElementById("full-tip");
 const displayResult = document.getElementById("result");
 // errors
 const displayBillError = document.getElementById("bill-error");
@@ -46,32 +47,31 @@ function getInputValue(inputElement, displayElement, errorElement) {
 }
 
 function calculateTest() {
+  console.log("test ", tipButtonElement.value);
   if (
     billInputElement.value > 0 &&
-    tipInputElement.value > 0 &&
+    displayTipElement.innerHTML > 0 &&
     numberOfPeopleInputElement.value > 0
   ) {
+    displayFullTip.innerHTML =
+      (billInputElement.value * displayTipElement.innerHTML) / 100;
     displayResult.innerHTML =
-      (billInputElement.value * tipInputElement.value) /
+      (billInputElement.value * displayTipElement.innerHTML) /
       100 /
       numberOfPeopleInputElement.value;
   }
-  console.log("bill: ", billInputElement.value);
-  console.log("tip input", tipInputElement.value);
-  console.log("people", numberOfPeopleInputElement.value);
+  // console.log("bill: ", billInputElement.value);
+  // console.log("tip input", tipInputElement.value);
+  // console.log("people", numberOfPeopleInputElement.value);
 }
 
 billInputElement.addEventListener("change", handleInput);
 tipInputElement.addEventListener("change", handleInput);
 for (let i = 0; i < tipButtonElement.length; i++) {
   tipButtonElement[i].addEventListener("click", () => {
+    tipInputElement.value = "";
     displayTipElement.innerHTML = tipButtonElement[i].value;
-    if (billInputElement.value > 0 && numberOfPeopleInputElement.value > 0) {
-      displayResult.innerHTML =
-        (billInputElement.value * displayTipElement.innerHTML) /
-        100 /
-        numberOfPeopleInputElement.value;
-    }
+    calculateTest();
   });
   console.log(tipButtonElement[i].tagName);
 }

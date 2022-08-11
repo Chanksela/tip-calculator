@@ -46,10 +46,15 @@ body {
   height: 100vh;
   width: 100vw;
 }
+label {
+  border: 1px solid red;
+  width: 100%;
+}
 .error {
   color: red;
   font-size: 0.5rem;
   text-align: right;
+  border: 1px solid;
 }
 /* Header & Container */
 #header-img {
