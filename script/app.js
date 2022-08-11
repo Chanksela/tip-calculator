@@ -1,25 +1,3 @@
-// global variables
-let bill;
-let tip;
-let people;
-let tipTotalAmount;
-let tipForEachPerson;
-const errorMessage = "Must be greater than 0";
-// display elements
-
-const displayFullTip = document.getElementById("full-amount");
-const displayTipForEach = document.getElementById("tip-for-each");
-// errors
-const displayBillError = document.getElementById("bill-error");
-const displayTipError = document.getElementById("tip-error");
-const displayPeopleError = document.getElementById("num-ppl-error");
-// input elements
-const billInputElement = document.getElementById("bill");
-const tipInputElement = document.getElementById("tip-input");
-const tipButtonElement = document.getElementsByClassName("tip-btn");
-const numberOfPeopleInputElement = document.getElementById(
-  "number-of-people-input"
-);
 function errorHandling(value, errorElement, errorMessage) {
   if (value > 0) {
     errorElement.innerHTML = "";
@@ -65,9 +43,25 @@ function calculate(e) {
     displayTipForEach.innerHTML = tipForEachPerson;
   }
 }
+function reset() {
+  console.log(bill);
+  billInputElement.value = "";
+  tipInputElement.value = "";
+  numberOfPeopleInputElement.value = "";
+  displayFullTip.innerHTML = "";
+  displayTipForEach.innerHTML = "";
+  bill = "";
+  tip = "";
+  people = "";
+  tipTotalAmount = "";
+  tipForEachPerson = "";
+
+  console.log("clicked");
+}
 billInputElement.addEventListener("input", (e) => calculate(e));
 tipInputElement.addEventListener("input", (e) => calculate(e));
 numberOfPeopleInputElement.addEventListener("input", (e) => calculate(e));
 for (let i = 0; i < tipButtonElement.length; i++) {
   tipButtonElement[i].addEventListener("click", (e) => calculate(e));
 }
+resetButton.addEventListener("click", reset);

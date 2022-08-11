@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tip Calculator</title>
-    <script src="script.js" defer></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+    </style>
+    <script src="./script/globalVariables.js" defer></script>
+    <script src="./script/app.js" defer></script>
     <link rel="icon" href="/assets/favicon-32x32.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -14,13 +18,12 @@
       <img src="/assets/logo.svg" alt="logo.svg" id="header-img" />
     </div>
     <div class="container">
-      <div class="input">
+      <div class="container-blocks">
         <div class="input-choices">
           <div class="bill">
             <label for="bill"
               >Bill <span class="error" id="bill-error"> </span
             ></label>
-
             <input type="number" name="bill" id="bill" placeholder="0" />
           </div>
           <div class="select-tip">
@@ -54,7 +57,7 @@
           </div>
         </div>
       </div>
-      <div class="output">
+      <div class="container-blocks right">
         <div class="display-blocks">
           <div>Tip Amount</div>
           <div id="full-amount"></div>
@@ -63,6 +66,7 @@
           <div>Tip For Each</div>
           <div id="tip-for-each"></div>
         </div>
+        <div><input type="button" value="RESET" id="reset" /></div>
       </div>
     </div>
   </body>
