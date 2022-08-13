@@ -95,13 +95,13 @@ input {
   align-self: center;
 }
 #bill {
-  background: url(./assets/images/icon-dollar.svg) 10px no-repeat
-    var(--veryLightGrayishCyan);
+  background: url(https://chanksela.github.io/tip-calculator/assets/images/icon-dollar.svg)
+    10px no-repeat var(--veryLightGrayishCyan);
   text-align: right;
 }
 #number-of-people-input {
-  background: url(./assets/images/icon-person.svg) 10px no-repeat
-    var(--veryLightGrayishCyan);
+  background: url(https://chanksela.github.io/tip-calculator/assets/images/icon-person.svg)
+    10px no-repeat var(--veryLightGrayishCyan);
   text-align: right;
 }
 .input-blocks > input:focus {
