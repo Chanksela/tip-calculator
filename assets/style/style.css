@@ -95,12 +95,12 @@ input {
   align-self: center;
 }
 #bill {
-  background: url(/assets/images/icon-person.svg) 10px no-repeat
+  background: url(./assets/images/icon-dollar.svg) 10px no-repeat
     var(--veryLightGrayishCyan);
   text-align: right;
 }
 #number-of-people-input {
-  background: url(/assets/images/icon-dollar.svg) 10px no-repeat
+  background: url(./assets/images/icon-person.svg) 10px no-repeat
     var(--veryLightGrayishCyan);
   text-align: right;
 }
