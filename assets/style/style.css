@@ -179,7 +179,8 @@ input {
   height: auto;
 }
 
-.reset-button > button {
+.reset-enabled,
+.reset-disabled {
   color: var(--darkCyan);
   width: 80%;
   height: 150%;
@@ -187,10 +188,15 @@ input {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: 1s ease-out;
   transition-property: background-color;
 }
-.reset-button > button:hover {
+
+.reset-enabled:hover {
   background-color: var(--veryLightGrayishCyan);
   filter: brightness(90%);
+}
+.reset-disabled {
+  color: var(--darkCyan);
+  background-color: var(--darkGrayCyan);
 }

@@ -1,4 +1,14 @@
+function checkReset() {
+  if (tip > 0 || bill > 0 || people > 0) {
+    resetButton.disabled = false;
+    resetButton.classList = "reset-enabled";
+  } else {
+    resetButton.disabled = true;
+    resetButton.classList = "reset-disabled";
+  }
+}
 function errorHandling(value, errorElement, errorMessage) {
+  checkReset();
   if (value > 0) {
     errorElement.innerHTML = "";
   } else {
@@ -16,12 +26,7 @@ function getValue(event) {
     errorHandling(tip, displayTipError, errorMessage);
   } else if (targetID === "number-of-people-input") {
     people = parseFloat(event.target.value);
-    errorHandling(
-      people,
-
-      displayPeopleError,
-      errorMessage
-    );
+    errorHandling(people, displayPeopleError, errorMessage);
   } else if (targetClass === "tip-btn") {
     tipInputElement.value = "";
     tip = parseFloat(event.target.value);
@@ -43,21 +48,26 @@ function calculate(e) {
     displayTipForEach.innerHTML = "$" + tipForEachPerson.toFixed(2);
   }
 }
+
 function reset() {
-  console.log(bill);
+  const tipAmount = 0;
+  const tipForEach = 0;
   billInputElement.value = "";
   tipInputElement.value = "";
   numberOfPeopleInputElement.value = "";
-  displayFullTip.innerHTML = "";
-  displayTipForEach.innerHTML = "";
+  displayFullTip.innerHTML = "$" + tipAmount.toFixed(2);
+  displayTipForEach.innerHTML = "$" + tipForEach.toFixed(2);
   bill = "";
   tip = "";
   people = "";
   tipTotalAmount = "";
   tipForEachPerson = "";
+  checkReset();
 
-  console.log("clicked");
+  console.log(bill, tip, people);
 }
+// check if reset must be enabled
+checkReset();
 billInputElement.addEventListener("input", (e) => calculate(e));
 tipInputElement.addEventListener("input", (e) => calculate(e));
 numberOfPeopleInputElement.addEventListener("input", (e) => calculate(e));
