@@ -200,3 +200,36 @@ input {
   color: var(--darkCyan);
   background-color: var(--darkGrayCyan);
 }
+@media all and (max-width: 375px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .left,
+  .right {
+    width: 100%;
+    height: 40%;
+  }
+  .container-blocks {
+    width: 90%;
+    height: 40%;
+  }
+  .input-blocks {
+    height: 300px;
+  }
+  .tip-header {
+    font-size: 4vw;
+  }
+  .span-person {
+    font-size: 2vw;
+  }
+  .display-amount {
+    font-size: 8vw;
+  }
+}
