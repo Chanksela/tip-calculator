@@ -1,10 +1,16 @@
+function disable() {
+  resetButton.disabled = true;
+  resetButton.classList = "reset-disabled";
+}
+function enable() {
+  resetButton.disabled = false;
+  resetButton.classList = "reset-enabled";
+}
 function checkReset() {
-  if (tip > 0 || bill > 0 || people > 0) {
-    resetButton.disabled = false;
-    resetButton.classList = "reset-enabled";
+  if (tip >= 0 || bill >= 0 || people >= 0) {
+    enable();
   } else {
-    resetButton.disabled = true;
-    resetButton.classList = "reset-disabled";
+    disable();
   }
 }
 console.log(tip);
@@ -67,6 +73,9 @@ function reset() {
   tipTotalAmount = "";
   tipForEachPerson = "";
   checkReset();
+  disable();
+
+  console.log(bill);
 }
 // check if reset must be enabled
 checkReset();
