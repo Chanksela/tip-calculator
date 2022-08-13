@@ -9,6 +9,7 @@ const errorMessage = "Must be greater than 0";
 const displayFullTip = document.getElementById("full-amount");
 const displayTipForEach = document.getElementById("tip-for-each");
 // errors
+const displayError = document.getElementsByClassName("error");
 const displayBillError = document.getElementById("bill-error");
 const displayTipError = document.getElementById("tip-error");
 const displayPeopleError = document.getElementById("num-ppl-error");
@@ -20,5 +21,6 @@ const numberOfPeopleInputElement = document.getElementById(
   "number-of-people-input"
 );
 const resetButton = document.getElementById("reset");
+
 displayFullTip.innerHTML = "$" + tipTotalAmount.toFixed(2);
 displayTipForEach.innerHTML = "$" + tipForEachPerson.toFixed(2);

@@ -1,5 +1,5 @@
 function checkReset() {
-  if (tip > 0 || bill > 0 || people > 0) {
+  if (tip >= 0 || bill >= 0 || people >= 0) {
     resetButton.disabled = false;
     resetButton.classList = "reset-enabled";
   } else {
@@ -7,6 +7,7 @@ function checkReset() {
     resetButton.classList = "reset-disabled";
   }
 }
+console.log(tip);
 function errorHandling(value, errorElement, errorMessage) {
   checkReset();
   if (value > 0) {
@@ -16,8 +17,8 @@ function errorHandling(value, errorElement, errorMessage) {
   }
 }
 function getValue(event) {
-  let targetID = event.target.id;
-  let targetClass = event.target.classList.value;
+  const targetID = event.target.id;
+  const targetClass = event.target.classList.value;
   if (targetID === "bill") {
     bill = parseFloat(event.target.value);
     errorHandling(bill, displayBillError, errorMessage);
@@ -52,6 +53,9 @@ function calculate(e) {
 function reset() {
   const tipAmount = 0;
   const tipForEach = 0;
+  for (const error of displayError) {
+    error.innerHTML = "";
+  }
   billInputElement.value = "";
   tipInputElement.value = "";
   numberOfPeopleInputElement.value = "";
@@ -63,15 +67,14 @@ function reset() {
   tipTotalAmount = "";
   tipForEachPerson = "";
   checkReset();
-
-  console.log(bill, tip, people);
 }
 // check if reset must be enabled
 checkReset();
+
 billInputElement.addEventListener("input", (e) => calculate(e));
 tipInputElement.addEventListener("input", (e) => calculate(e));
 numberOfPeopleInputElement.addEventListener("input", (e) => calculate(e));
-for (let i = 0; i < tipButtonElement.length; i++) {
-  tipButtonElement[i].addEventListener("click", (e) => calculate(e));
+for (const btn of tipButtonElement) {
+  btn.addEventListener("click", (e) => calculate(e));
 }
 resetButton.addEventListener("click", reset);
