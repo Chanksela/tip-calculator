@@ -5,35 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tip Calculator</title>
-    <script src="script.js" defer></script>
-    <link rel="icon" href="/assets/favicon-32x32.png" />
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+    </style>
+    <script src="./assets/script/globalVariables.js" defer></script>
+    <script src="./assets/script/app.js" defer></script>
+    <link rel="icon" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
   </head>
   <body>
     <div id="header">
-      <img src="/assets/logo.svg" alt="logo.svg" id="header-img" />
+      <img src="/assets/images/logo.svg" alt="logo.svg" id="header-img" />
     </div>
     <div class="container">
-      <div class="input">
+      <div class="container-blocks">
         <div class="input-choices">
-          <div class="bill">
+          <div class="input-blocks">
             <label for="bill"
               >Bill <span class="error" id="bill-error"> </span
             ></label>
-
-            <input type="number" name="bill" id="bill" placeholder="0" />
+            <input
+              class="inputs"
+              type="number"
+              name="bill"
+              id="bill"
+              placeholder="0"
+            />
           </div>
-          <div class="select-tip">
+          <div class="input-blocks">
             <label for="tip"
               >Select Tip %<span class="error" id="tip-error"></span
             ></label>
-            <div class="choices">
-              <button class="tip-btn" value="5">5%</button>
-              <button class="tip-btn" value="10">10%</button>
-              <button class="tip-btn" value="15">15%</button>
-              <button class="tip-btn" value="25">25%</button>
-              <button class="tip-btn" value="50">50%</button>
+            <div class="tip-buttons-block">
+              <input type="button" class="tip-btn" value="5%" />
+              <input type="button" class="tip-btn" value="10%" />
+              <input type="button" class="tip-btn" value="15%" />
+              <input type="button" class="tip-btn" value="25%" />
+              <input type="button" class="tip-btn" value="50%" />
               <input
+                class="inputs"
                 type="number"
                 name="tip"
                 id="tip-input"
@@ -41,11 +51,12 @@
               />
             </div>
           </div>
-          <div class="number-of-people">
+          <div class="input-blocks">
             <label for="number-of-people"
               >Number of People <span class="error" id="num-ppl-error"></span
             ></label>
             <input
+              class="inputs"
               type="number"
               name="number-of-people"
               id="number-of-people-input"
@@ -54,26 +65,21 @@
           </div>
         </div>
       </div>
-      <div class="output">
+      <div class="container-blocks right">
         <div class="display-blocks">
-          <div>Bill is</div>
-          <div id="display-input"></div>
+          <div class="tip-header">
+            Tip Amount<span class="span-person">/person</span>
+          </div>
+          <div id="tip-for-each" class="display-amount"></div>
         </div>
         <div class="display-blocks">
-          <div>Tip is</div>
-          <div id="display-tip"></div>
+          <div class="tip-header">
+            Total <span class="span-person">/person</span>
+          </div>
+          <div id="full-amount" class="display-amount"></div>
         </div>
-        <div class="display-blocks">
-          <div>People is</div>
-          <div id="display-people"></div>
-        </div>
-        <div class="display-blocks">
-          <div>Tip Amount</div>
-          <div id="full-tip"></div>
-        </div>
-        <div class="display-blocks">
-          <div>Tip Amount for Each person</div>
-          <div id="result"></div>
+        <div class="reset-button">
+          <button type="button" id="reset" class="reset-enabled">RESET</button>
         </div>
       </div>
     </div>
