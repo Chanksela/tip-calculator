@@ -1,5 +1,5 @@
 function checkReset() {
-  if (tip >= 0 || bill >= 0 || people >= 0) {
+  if (tip > 0 || bill > 0 || people > 0) {
     resetButton.disabled = false;
     resetButton.classList = "reset-enabled";
   } else {
